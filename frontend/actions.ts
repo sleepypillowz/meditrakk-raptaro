@@ -49,6 +49,47 @@ export async function editMedicineBatch(
   revalidatePath("/medicines");
 }
 
+export async function editDoctor(doctorId: string, data: { field: string }) {
+  await prisma.doctor.update({
+    where: { id: doctorId },
+    data,
+  });
+
+  revalidatePath("/doctor-list");
+}
+
+export async function addDoctor(formData: FormData) {
+  const userId = formData.get("userId") as string;
+  const field = formData.get("field") as string;
+
+  await prisma.doctor.create({
+    data: {
+      userId,
+      field,
+    },
+  });
+  revalidatePath("/doctor-list");
+}
+
+export async function archiveDoctor(formData: FormData) {
+  const id = formData.get("id") as string;
+  await prisma.doctor.update({
+    where: { id },
+    data: { archived: true },
+  });
+  revalidatePath("/doctor-list");
+}
+
+export async function restoreDoctor(formData: FormData) {
+  const id = formData.get("id") as string;
+  await prisma.doctor.update({
+    where: { id },
+    data: { archived: false },
+  });
+  revalidatePath("/doctor-list");
+}
+
+
 export async function createPost(formData: FormData) {
   await prisma.post.create({
     data: {
