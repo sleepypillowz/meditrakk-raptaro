@@ -21,3 +21,12 @@ export interface MedicineBatch {
   quantity: number;
   expiryDate:  Date;
 }
+
+export interface Patient {
+  id: string;
+  name: string;
+  gender: string | null;
+  dateOfBirth: Date | null;
+  city: string | null;
+  barangay: string | null;
+}

@@ -30,8 +30,8 @@ const menu_items = [
     icon: Heart,
   },
   {
-    title: "Medical Records",
-    url: "/oncall-doctors/medical-records",
+    title: "Patient List",
+    url: "/oncall-doctors/patient-list",
     icon: Users,
   },
 ];
