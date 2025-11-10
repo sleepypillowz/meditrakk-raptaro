@@ -126,6 +126,7 @@ exports.Prisma.UserScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   name: 'name',
+  email: 'email',
   role: 'role'
 };
 
@@ -219,6 +220,7 @@ exports.Prisma.DoctorScalarFieldEnum = {
   updatedAt: 'updatedAt',
   archived: 'archived',
   userId: 'userId',
+  name: 'name',
   field: 'field'
 };
 
@@ -242,12 +244,12 @@ exports.Prisma.MedicineTypeScalarFieldEnum = {
 
 exports.Prisma.MedicineBatchScalarFieldEnum = {
   id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   medicineId: 'medicineId',
   batchNumber: 'batchNumber',
-  expiryDate: 'expiryDate',
   quantity: 'quantity',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  expiryDate: 'expiryDate'
 };
 
 exports.Prisma.PrescriptionScalarFieldEnum = {
@@ -257,7 +259,8 @@ exports.Prisma.PrescriptionScalarFieldEnum = {
   patientId: 'patientId',
   doctorId: 'doctorId',
   medicineId: 'medicineId',
-  dosage: 'dosage',
+  quantity: 'quantity',
+  frequency: 'frequency',
   duration: 'duration'
 };
 
